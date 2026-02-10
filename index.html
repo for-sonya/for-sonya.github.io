@@ -7,11 +7,14 @@
     <link rel="icon" href="icon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&family=Neucha&display=swap" rel="stylesheet">
 <!--    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pangolin&display=swap" rel="stylesheet">-->
 
     <style>
         * {
+            -webkit-tap-highlight-color: transparent; /* Убирает синюю рамку при нажатии на смартфонах */
+            user-select: none; /* Запрещает выделение текста (чтобы не было синих блоков) */
+
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -86,11 +89,13 @@
         }
 
         p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #444;
-            margin-bottom: 1.5rem;
+            font-family: 'Neucha', cursive; /* Используем рукописный шрифт */
+            font-size: 1.3rem;             /* Делаем текст чуть крупнее и читабельнее */
+            line-height: 1.5;              /* Увеличиваем расстояние между строками */
+            color: #5d4037;                /* Цвет текста (мягкий темно-коричневый вместо черного) */
+            margin-bottom: 1.5rem;         /* Отступ между абзацами */
             white-space: pre-wrap;
+            transition: color 0.5s ease;   /* Плавное появление цвета при клике на спойлер */
         }
 
         .heart-icon {
@@ -164,26 +169,19 @@
         }
 
         .spoiler {
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            background: linear-gradient(45deg, #ff9a9e, #fecfef); /* Нежные розовые тона */
             color: transparent;
             cursor: pointer;
-            border-radius: 6px;
-            padding: 2px 6px;
-            transition: all 0.4s ease;
-            position: relative;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            user-select: none;
-            animation: pulse-spoiler 2s infinite;
+            border-radius: 8px;
+            padding: 3px 8px;
+            display: inline-block; /* Чтобы фон спойлера облегал текст аккуратнее */
         }
 
         .spoiler.revealed {
             background: transparent;
-            color: inherit;
-            box-shadow: none;
-            cursor: default;
-            animation: none;
-            user-select: text;
+            color: #5d4037; /* Цвет, который мы выбрали для p */
         }
+
 
 
     </style>
